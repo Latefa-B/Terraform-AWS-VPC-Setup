@@ -16,41 +16,41 @@ In order to proceed to the lab, we need to make sure beforehand to :
 <img width="961" height="149" alt="1" src="https://github.com/user-attachments/assets/69eb4678-5a19-4a4e-a289-6f12495b14a3" />
 
 ## Step-by-Step Instructions 
-# Step 1: Define the Provider
+### Step 1: Define the Provider
 On your main.tf file, write the code below. This tells Terraform to use AWS as a provider and the region where all the resources will be created.
 <img width="808" height="121" alt="2" src="https://github.com/user-attachments/assets/9e98ade6-a2df-427f-996e-f1a17a5617bc" />
 
-# Step 2: Create a VPC
+### Step 2: Create a VPC
 On your main.tf file, add the code below. This will create a virtual network on AWS.
 <img width="916" height="235" alt="3" src="https://github.com/user-attachments/assets/6534ce46-3ee7-4d53-af42-2773de9ad7f3" />
 
-# Step 3: Create Public and Private Subnets
+### Step 3: Create Public and Private Subnets
 On your main.tf file, add the code below. This tells terraform to configure a Public subnet that gets internet access directly.  And a Private subnet that stays internal — no direct access.
 <img width="992" height="501" alt="4" src="https://github.com/user-attachments/assets/500bf29b-ee63-4deb-becc-f9cda94446f6" />
 
 
-# Step 4: Create an Internet Gateway
+### Step 4: Create an Internet Gateway
 On your main.tf file, add the code below. This tells Terraform to configure an Internet Gateway that the Public subnet will use to access the internet.
 <img width="853" height="622" alt="5" src="https://github.com/user-attachments/assets/c8d62b18-5b00-4e24-8b29-6d40082d7a1e" />
 
-# Step 5: Public Route Table
+### Step 5: Public Route Table
 On your main.tf file, add the code below. This tells terraform to configure a public route that sends all internet traffic (0.0.0.0/0) through the Internet Gateway.
 <img width="705" height="824" alt="6" src="https://github.com/user-attachments/assets/ea950dab-7f8e-4290-bc63-18d4282a1cfc" />
 
-# Step 6: NAT Gateway (for Private Subnet)
+### Step 6: NAT Gateway (for Private Subnet)
 - On your main.tf file, add the code below. In order to create first, an Elastic IP for NAT.
 - Then to create the NAT Gateway itself. The NAT Gateway lets the private subnet reach the internet securely.
 <img width="1160" height="240" alt="7" src="https://github.com/user-attachments/assets/4c2fccb1-d1c4-419e-b013-4dca85f4dcb1" />
 
-# Step 7: Private Route Table
+### Step 7: Private Route Table
 On your main.tf file, add the code below. This code gives internet access only from the private subnet via NAT — no direct exposure.
 <img width="658" height="279" alt="8" src="https://github.com/user-attachments/assets/63642bba-f853-44e3-a1a6-a62af335339e" />
 
-# Step 8: Outputs (Optional but Helpful)
+### Step 8: Outputs (Optional but Helpful)
 On your outputs.tf file, write the code below. The output.tf configuration file is optional but helpful, it allows users to understand the configuration and review its expected outputs.
 <img width="1045" height="224" alt="9" src="https://github.com/user-attachments/assets/7f2c4b35-6606-4e8e-b8d0-5778f8533b0f" />
 
-# Step 9: Deploy 
+### Step 9: Deploy 
 Now that we have defined the configuration files, we will deploy the infrastructure.
 - Run terraform init command : to Initialize the working directory/project, downloads the necessary plugins and prepare terraform.
 <img width="596" height="312" alt="10" src="https://github.com/user-attachments/assets/f002bfb9-7d24-4f39-93cf-ed0d40ce1804" />
@@ -92,7 +92,7 @@ Now that we have defined the configuration files, we will deploy the infrastruct
 - **Nat Gateway**
 <img width="1432" height="738" alt="31" src="https://github.com/user-attachments/assets/5d6b592e-d5ca-425b-9540-e795795586cb" />
 
-# Step 10 : Destroy (Cleanup)
+### Step 10 : Destroy (Cleanup)
 - Run terraform destroy command : to delete the infrastructure and removes all the resources managed by terraform.
 - Type yes when prompted.
 <img width="1318" height="875" alt="32" src="https://github.com/user-attachments/assets/257f63ab-fee9-482c-bc0e-1eeb3256d97a" />
